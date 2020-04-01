@@ -21,15 +21,23 @@ int main(){
     char key;
     int hx=1,hy=0;
     int tx=0,ty=0;
+    int fx=rand()%10,fy=rand()%10;
     map[0][0]=map[0][1]=key='d';
     printf("##");
+    gotoxy(fx,fy);putchar('*');
     while(1){
         while(kbhit())key=getch();
-        gotoxy(tx,ty);putchar(' ');
-        move(&tx,&ty,map[ty][tx]);
         map[hy][hx]=key;
         move(&hx,&hy,map[hy][hx]);
         gotoxy(hx,hy);putchar('#');
+        if(hx==fx&&hy==fy){
+            fx=rand()%10;
+            fy=rand()%10;
+            gotoxy(fx,fy);putchar('*');
+        }else{
+            gotoxy(tx,ty);putchar(' ');
+            move(&tx,&ty,map[ty][tx]);
+        }
         gotoxy(0,10);putchar('\n');
         Sleep(500);
     }
