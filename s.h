@@ -1,12 +1,8 @@
-#include <conio.h>
-#include <stdio.h>
+// #include <conio.h>
+// #include <stdio.h>
+// #include <stdlib.h>
 #include <windows.h>
 void t(char x,char y,char c){
-    HANDLE handle;
-    COORD coord;
-    coord.X = x;
-    coord.Y = y;
-    handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleCursorPosition(handle, coord);
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),(COORD){x,y});
     putchar(c);
 }
