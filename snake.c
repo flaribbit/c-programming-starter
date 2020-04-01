@@ -19,12 +19,11 @@ void move(int *x,int *y,char c){
 char map[20][20];
 int main(){
     char key;
-    int hx=1,hy=0;
+    int hx=0,hy=0;
     int tx=0,ty=0;
-    int fx=rand()%10,fy=rand()%10;
-    map[0][0]=map[0][1]=key='d';
-    printf("##");
-    gotoxy(fx,fy);putchar('*');
+    int fx=1,fy=0;
+    map[0][0]=key='d';
+    printf("#");
     while(1){
         while(kbhit())key=getch();
         map[hy][hx]=key;
