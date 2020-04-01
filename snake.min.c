@@ -1,29 +1,25 @@
 #include"s.h"
 #define m(x,y) m[y][x]
-#define n(x,y,c) if(c=='w')--y;if(c=='s')++y;\
-    if(c=='a')--x;if(c=='d')++x;
-char m(20,20);
+#define n(x,y,c) l=c;if(l=='w')--y;if(l=='s')++y;if(l=='a')--x;if(l=='d')++x;
+char m(20,10);
 int main(){
-    char k;
-    int hx=0,hy=0;
-    int tx=0,ty=0;
-    int fx=1,fy=0;
+    char k,l;
+    int a=0,b=0,c=0,d=0,e=1,f=0;
     m(0,0)=k='d';
     t(0,0,'#');
-    while(1){
+    for(;;){
         while(kbhit())k=getch();
-        m(hx,hy)=k;
-        n(hx,hy,m(hx,hy));
-        t(hx,hy,'#');
-        if(hx==fx&&hy==fy){
-            fx=rand()%10;
-            fy=rand()%10;
-            t(fx,fy,'*');
+        m(a,b)=k;
+        n(a,b,m(a,b));
+        t(a,b,'#');
+        if(a==e&&b==f){
+            e=rand()%10,f=rand()%10;
+            t(e,f,'*');
         }else{
-            t(tx,ty,' ');
-            n(tx,ty,m(tx,ty));
+            t(c,d,' ');
+            n(c,d,m(c,d));
         }
         t(0,10,'\n');
-        Sleep(500);
+        Sleep(250);
     }
 }
