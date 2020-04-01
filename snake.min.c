@@ -1,6 +1,6 @@
 #include"s.h"
 #define m(x,y) m[y][x]
-#define n(x,y,c) l=c;if(l=='w')--y;if(l=='s')++y;if(l=='a')--x;if(l=='d')++x;
+#define n(x,y,c) l=c;y+=(l=='s')-(l=='w');x+=(l=='d')-(l=='a');
 char m(20,10);
 int main(){
     char k,l;
